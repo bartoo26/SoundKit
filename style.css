@@ -1,0 +1,142 @@
+body {
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  background-image: linear-gradient(135deg, #999999, #333333);
+}
+
+#padContainer {
+  width: 80vw;
+  height: 60vh;
+  margin: 2.5vh auto;
+  background: #492201;
+  background-image: url("./wood.png");
+  border-radius: 25px;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-flow: row wrap;
+  -moz-flex-flow: row wrap;
+  -ms-flex-flow: row wrap;
+  flex-flow: row wrap;
+  padding: 20px calc(5% - 30px);
+  border: 2px solid #005a00;
+}
+#padContainer .pad {
+  width: 30%;
+  height: 30%;
+  margin-left: 5%;
+  margin-top: calc((2.5% - 20px) / 2);
+  background-image: linear-gradient(135deg, #999999 20%, #333333 80%, #333333 100%);
+  border-radius: 10px;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-align-items: center;
+  -moz-align-items: center;
+  -ms-align-items: center;
+  align-items: center;
+  -webkit-justify-content: center;
+  -moz-justify-content: center;
+  -ms-justify-content: center;
+  justify-content: center;
+  -ms-flex-pack: center;
+}
+#padContainer .pad:nth-of-type(3n+1) {
+  margin-left: 0px;
+}
+#padContainer .pad .shortcut {
+  color: #005a00;
+}
+#padContainer .pad .shortcut h3 {
+  font-size: 5rem;
+}
+
+#recorder {
+  width: 80vw;
+  height: 20vh;
+  margin: 2.5vh auto;
+  background-image: linear-gradient(to right, #333333 0%, #999999 50%, #333333 100%);
+  border: 2px solid #005a00;
+  border-radius: 15px;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-flow: row wrap;
+  -moz-flex-flow: row wrap;
+  -ms-flex-flow: row wrap;
+  flex-flow: row wrap;
+  padding: 20px calc(5% - 30px);
+}
+#recorder .track {
+  width: 45%;
+  height: 45%;
+  border: 2px solid white;
+  margin-left: 2.5%;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-align-items: center;
+  -moz-align-items: center;
+  -ms-align-items: center;
+  align-items: center;
+}
+#recorder .track [id*=track] {
+  display: block;
+  width: 35px;
+  height: 35px;
+  font-size: 0;
+  background-color: red;
+  border: 0;
+  border-radius: 35px;
+  margin-left: 15px;
+  outline: none;
+}
+#recorder .track .notRec {
+  background-color: darkred;
+}
+#recorder .track .rec {
+  animation-name: pulse;
+  animation-duration: 1.5s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+@keyframes pulse {
+  0% {
+    box-shadow: 0px 0px 5px 0px rgba(173, 0, 0, 0.3);
+  }
+  65% {
+    box-shadow: 0px 0px 5px 13px rgba(173, 0, 0, 0.3);
+  }
+  90% {
+    box-shadow: 0px 0px 5px 13px rgba(173, 0, 0, 0);
+  }
+}
+#recorder .track [id*=play] {
+  display: none;
+  background: rgba(0, 0, 0, 0);
+  margin-left: 10px;
+  width: 35px;
+  height: 35px;
+  border-style: solid;
+  border-width: 17px 0 17px 35px;
+  border-color: rgba(0, 0, 0, 0) rgba(0, 0, 0, 0) rgba(0, 0, 0, 0) #005a00;
+  box-sizing: border-box;
+  transition: 100ms all ease;
+}
+#recorder .track [id*=play].paused {
+  border-style: double;
+  border-width: 0px 0 0px 30px;
+}
+
+/*# sourceMappingURL=style.css.map */
